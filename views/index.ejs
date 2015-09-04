@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+    <script>
+      var socket = io.connect('http://localhost:3000');
+
+      socket.on('sensors/temperature', function (data) {
+        $('#temperature').text(data.value);
+      });
+
+      socket.on('sensors/luminosity', function (data) {
+        $('#luminosity').text(data.value);
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Temperatura: <span id='temperature'></span></p>
+    <p>Luminosidade: <span id='luminosity'></span></p>
+  </body>
+</html>

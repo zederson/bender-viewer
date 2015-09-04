@@ -8,7 +8,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
     <script>
-      var socket = io.connect('http://localhost:3000');
+      var socket = io.connect('http://node65656-ederson.jelasticlw.com.br/');
 
       socket.on('sensors/temperature', function (data) {
         $('#temperature').text(data.value);

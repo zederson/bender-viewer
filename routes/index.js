@@ -1,13 +1,12 @@
 var express = require('express');
-var router = express.Router();
+var router  = express.Router();
+var weather = require('../services/weather');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+  var result = weather.search();
 
-router.get('/test', function(req, res, next) {
-  res.render('test', { title: 'Express' });
+  res.render('index', { weather: result });
 });
 
 module.exports = router;

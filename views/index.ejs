@@ -1,28 +1,37 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+<% include ./partials/headers %>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<!-- works -->
+<div id="works"  class=" clearfix grid">
+  <figure class="effect-oscar  wowload fadeInUp">
+    <img src="images/portfolio/9.jpg" alt="img01"/>
+    <figcaption>
+    <h2 id="temperature"></h2>
+    <p>Lily likes to play with crayons and pencils<br>
+    <a href="images/portfolio/9.jpg" title="1" data-gallery>View more</a></p>
+    </figcaption>
+  </figure>
+  <figure class="effect-oscar  wowload fadeInUp">
+    <img src="images/portfolio/4.jpg" alt="img01"/>
+    <figcaption>
+    <h2 id="luminosity"></h2>
+    <p>Lily likes to play with crayons and pencils<br>
+    <a href="images/portfolio/4.jpg" title="1" data-gallery>View more</a></p>
+    </figcaption>
+  </figure>
+  <figure class="effect-oscar  wowload fadeIn">
+    <img src="images/portfolio/1.jpg" alt="img01"/>
+    <figcaption>
+    <h2></h2>
+    <p>Lily likes to play with crayons and pencils<br>
+    <a href="images/portfolio/1.jpg" title="1" data-gallery>View more</a></p>
+    </figcaption>
+  </figure>
+</div>
+<!--Contact Ends-->
+<!-- a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a -->
 
-    <script>
-      var socket = io.connect('http://node65656-ederson.jelasticlw.com.br/');
-
-      socket.on('sensors/temperature', function (data) {
-        $('#temperature').text(data.value);
-      });
-
-      socket.on('sensors/luminosity', function (data) {
-        $('#luminosity').text(data.value);
-      });
-    </script>
-
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Temperatura: <span id='temperature'></span></p>
-    <p>Luminosidade: <span id='luminosity'></span></p>
-  </body>
+<% include ./partials/footer %>
+<% include ./partials/scripts %>
+<script src="/socket.io/socket.io.js"></script>
+<script src="javascripts/bender.js"></script>
 </html>

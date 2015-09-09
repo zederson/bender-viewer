@@ -1,5 +1,5 @@
 body {	color:#666;	font:300 15px/15px Roboto,Arial,Helvetica;background-color:#fff;-webkit-font-smoothing:antialiased;}
-
+.vermelho{color:#BF0A53}
 a{color:#00a9c6; text-decoration:none;}
 a:hover{color:#666;}
 .btn,a,.btn:hover,a:hover {
@@ -11,7 +11,7 @@ a:hover{color:#666;}
   outline: none !important;
 }
 
-h1,h2,h3,h4{margin: 0;line-height: 1em;}
+h1,h2,h3,h4{margin: 0;line-height: 1em;color:#1732A2}
 h1{font:700 5em Roboto,Arial,Helvetica;margin:0.25em 0;text-transform: uppercase;}
 h2{font:300 2.5em Roboto,Arial,Helvetica;margin-bottom: 1.5em;}
 h3{font:300 2em Roboto,Arial,Helvetica;margin:2em 0 1em 0;}

@@ -3,7 +3,7 @@ var bender;
   'use strict';
 
   function init() {
-    //var socket = io.connect('http://localhost:3000/');
+    register();
     var socket = io.connect('http://ederson.jelasticlw.com.br/');
 
     socket.on('sensors/temperature', function (data) {
@@ -17,6 +17,25 @@ var bender;
     });
   }
   bender.init = init;
+
+  function register() {
+    $('.luminosity').on({click: luminosity});
+  }
+
+  function luminosity() {
+    var val = $(this).data('value');
+
+    var uri    = '/api/luminosity';
+    var data = JSON.stringify({data: val});
+
+    $.ajax({
+          url: uri,
+          type: 'PUT',
+          data: data,
+          contentType: "application/json",
+          dataType: 'json'
+    });
+  }
 })(bender || (bender = {}));
 
 bender.init();

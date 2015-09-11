@@ -12,7 +12,7 @@ body {
 }
 
 .vermelho{color:#BF0A53}
-a{color:#00a9c6; text-decoration:none;}
+a{color:#000; text-decoration:none;}
 a:hover{color:#666;}
 .btn,a,.btn:hover,a:hover {
   -webkit-transition: all 0.3s ease-in-out;
@@ -32,7 +32,8 @@ h4 i{margin-right: 0.5em;}
 
 p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 
-.spacer{padding: 6em 0;}
+.spacer{padding: 3em 0;}
+.spacer-footer{padding: 0.5em 0;}
 
 .btn{border:none;border-radius: 0;padding: 1em 4em;background: rgba(0,0,0,0.5);text-transform: uppercase;}
 .btn:hover,.btn:active{color: #fff;}
@@ -60,7 +61,7 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 
 /*about*/
 .about.spacer{padding-left: 4em; padding-right: 4em;}
-.process ul li{width: 10em;height: 10em;border: 1px solid #CEEBF0;padding: 0;border-radius: 50%;margin: 0 1.25em;line-height: 13.5em;color: #21ABCA;}
+.process ul li{width: 10em;height: 10em;border: 1px solid #CEEBF0;padding: 0;border-radius: 50%;margin: 0 1.25em;line-height: 13.5em;color: #8E1461;}
 .process ul li span{line-height: 2em;display: inline-block;font-weight: 300;}
 .process ul li span i{font-size: 3em;}
 .process ul li span b{display: block;font-size: 1em;font-weight: 300;}

@@ -22,3 +22,8 @@ module.exports.luminosity = function(val) {
   var result = '' + val;
   client.publish('receiver/luminosity', result);
 }
+
+module.exports.bulb = function(lamp, color) {
+  var result = '' + lamp + '|' + color;
+  client.publish('receiver/bulb', result);
+}

@@ -21,6 +21,7 @@ var bender;
 
   function register() {
     $('.luminosity').on({click: luminosity});
+    $('.off_all').on({click: offAll});
   }
 
   function bulb() {
@@ -40,6 +41,19 @@ var bender;
 
     $('#bulb_target').val('');
     $('#bulb_target').data('target', '');
+  }
+
+  function offAll() {
+    var uri    = '/api/luminosity/off_all';
+    var data = JSON.stringify({});
+
+    $.ajax({
+          url: uri,
+          type: 'PUT',
+          data: data,
+          contentType: "application/json",
+          dataType: 'json'
+    });
   }
 
   function luminosity() {

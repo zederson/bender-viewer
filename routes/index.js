@@ -13,6 +13,10 @@ router.put('/api/luminosity', function(req, res, next) {
   publisher.luminosity(val);
 });
 
+router.put('/api/luminosity/off_all', function(req, res, next) {
+  publisher.bulbOffAll();
+});
+
 router.put('/api/bulb', function(req, res, next) {
   var target = req.body.lamp;
   var color  = req.body.color;

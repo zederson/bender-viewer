@@ -24,6 +24,11 @@ module.exports.luminosity = function(val) {
 }
 
 module.exports.bulb = function(lamp, color) {
-  var result = '' + lamp + '|' + color;
-  client.publish('receiver/bulb', result);
+  var topic = 'lights/' + lamp + '/color';
+  client.publish(topic, color);
+}
+
+module.exports.bulbOffAll = function() {
+  var topic = 'lights/off';
+  client.publish(topic, '' );
 }

@@ -20,7 +20,7 @@ module.exports.start = function(io) {
 
 module.exports.luminosity = function(val) {
   var result = '' + val;
-  client.publish('receiver/luminosity', result);
+  client.publish('lights/sensor/luminosity', result);
 }
 
 module.exports.bulb = function(lamp, color) {

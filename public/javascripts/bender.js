@@ -57,9 +57,8 @@ var bender;
   }
 
   function luminosity() {
-    var val = $(this).data('value');
-
-    var uri    = '/api/luminosity';
+    var val  = $(this).data('value');
+    var uri  = '/api/luminosity';
     var data = JSON.stringify({data: val});
 
     $.ajax({

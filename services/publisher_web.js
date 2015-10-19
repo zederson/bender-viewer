@@ -32,3 +32,9 @@ module.exports.bulbOffAll = function() {
   var topic = 'lights/off';
   client.publish(topic, '' );
 }
+
+module.exports.changeSocket = function(id, value) {
+  var topic = 'bender/socket/' + id;
+  var val   = value + '';
+  client.publish(topic, val);
+}

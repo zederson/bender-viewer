@@ -82,7 +82,7 @@ var bender;
     var val       = $(this).data('state');
     var id        = $(this).data('socket');
     var sendValue = !(val == 'true');
-    var uri       = '/api/sockets';
+    var uri       = '/api/sockets/' + id;
     var data      = JSON.stringify({ data: sendValue });
 
     $.ajax({

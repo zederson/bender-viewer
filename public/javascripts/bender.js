@@ -7,17 +7,32 @@ var bender;
     condigureColorPick();
 
     var socket = io.connect('http://ederson.jelasticlw.com.br/');
+    readSocketTemperature(socket);
+    readSocketLuminosity(socket);
+    readSocketFan(socket);
+  }
+  bender.init = init;
+
+  function readSocketTemperature(socket) {
     socket.on('sensors/temperature', function (data) {
       $('#temperature').text(data.value + 'ºC');
     });
+  }
 
+  function readSocketLuminosity(socket) {
     socket.on('sensors/luminosity', function (data) {
       var val = (parseInt(data.value) / 1023) * 100;
       val = val.toFixed(0);
       $('#luminosity').text(val + ' %');
     });
   }
-  bender.init = init;
+
+  function readSocketFan(socket) {
+    console.log('aaaaa')
+    socket.on('sensors/socket/1', function (data) {
+      console.log(data)
+    });
+  }
 
   function register() {
     $('.luminosity').on({click: luminosity});

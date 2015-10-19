@@ -1,7 +1,7 @@
 var mqtt      = require('mqtt');
 var publisher = require('./publisher_web');
 var host      = 'mqtt://cpro25389.publiccloud.com.br';
-var subscribe = ['sensors/temperature', 'sensors/luminosity', 'sensors/socket/1'];
+var subscribe = ['sensors/temperature', 'sensors/luminosity', 'sensors/socket/#'];
 var client    = mqtt.connect(host);
 
 module.exports.start = function(io) {

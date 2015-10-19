@@ -6,7 +6,7 @@ var bender;
     register();
     condigureColorPick();
 
-    var socket = io.connect('http://ederson.jelasticlw.com.br/');
+    var socket = io.connect('localhost:8080');
     readSocketTemperature(socket);
     readSocketLuminosity(socket);
     readSocketFan(socket);
@@ -28,15 +28,22 @@ var bender;
   }
 
   function readSocketFan(socket) {
-    console.log('aaaaa')
     socket.on('sensors/socket/1', function (data) {
-      console.log(data)
+      if (data.value == 'true') {
+        $('.socket_1').addClass('verde');
+        $('.socket_1').removeClass('vermelho');
+      } else {
+        $('.socket_1').addClass('vermelho');
+        $('.socket_1').removeClass('verde');
+      }
+      $('#socket_1_state').data('state', data.value);
     });
   }
 
   function register() {
     $('.luminosity').on({click: luminosity});
     $('.off_all').on({click: offAll});
+    $('.socket').on({click: toggleSocketState});
   }
 
   function bulb() {
@@ -61,6 +68,22 @@ var bender;
   function offAll() {
     var uri    = '/api/luminosity/off_all';
     var data = JSON.stringify({});
+
+    $.ajax({
+          url: uri,
+          type: 'PUT',
+          data: data,
+          contentType: "application/json",
+          dataType: 'json'
+    });
+  }
+
+  function toggleSocketState() {
+    var val       = $(this).data('state');
+    var id        = $(this).data('socket');
+    var sendValue = !(val == 'true');
+    var uri       = '/api/sockets';
+    var data      = JSON.stringify({ data: sendValue });
 
     $.ajax({
           url: uri,

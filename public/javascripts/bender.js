@@ -6,7 +6,7 @@ var bender;
     register();
     condigureColorPick();
 
-    var socket = io.connect('localhost:8080');
+    var socket = io.connect('http://ederson.jelasticlw.com.br/');
     readSocketTemperature(socket);
     readSocketLuminosity(socket);
     readSocketFan(socket);
